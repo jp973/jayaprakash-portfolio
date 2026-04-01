@@ -34,7 +34,7 @@ const App = () => {
       }`}
     >
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-      <main className="relative mx-auto flex max-w-5xl flex-col gap-16 px-4 py-20 sm:px-6 lg:px-0">
+      <main className="relative mx-auto flex max-w-5xl flex-col px-4 sm:px-6 lg:px-0">
         <Home />
         <About />
         <Skills />

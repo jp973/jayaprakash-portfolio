@@ -33,3 +33,4 @@ gitleaks-history-report.json
 script/.env
 script/bin/
 
+.env

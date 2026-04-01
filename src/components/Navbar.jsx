@@ -7,6 +7,20 @@ const navLinks = [
 ];
 
 const Navbar = ({ darkMode, toggleDarkMode }) => {
+  const handleSmoothScroll = (e, href) => {
+    e.preventDefault();
+    const targetId = href.replace("#", "");
+    const element = document.getElementById(targetId);
+    if (element) {
+      const navbarHeight = 64;
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: elementPosition - navbarHeight,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-gray-200/70 bg-white/80 px-4 py-3 shadow-sm backdrop-blur-sm transition-colors duration-300 dark:border-gray-800 dark:bg-gray-900/80">
       <div className="mx-auto flex max-w-6xl items-center justify-between">
@@ -18,7 +32,8 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
             <a
               key={link.label}
               href={link.href}
-              className="hover:text-sky-500 dark:hover:text-sky-400"
+              onClick={(e) => handleSmoothScroll(e, link.href)}
+              className="hover:text-sky-500 dark:hover:text-sky-400 transition-colors duration-300"
             >
               {link.label}
             </a>
