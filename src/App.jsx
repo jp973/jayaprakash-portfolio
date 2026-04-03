@@ -34,7 +34,14 @@ const App = () => {
       }`}
     >
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-      <main className="relative mx-auto flex max-w-5xl flex-col px-4 sm:px-6 lg:px-0">
+      <main className="relative mx-auto flex max-w-7xl flex-col px-6 lg:px-12">
+        {/* Background Decorations */}
+        <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+          <div className="absolute -top-[10%] -left-[10%] h-[40%] w-[40%] rounded-full bg-sky-500/5 blur-[120px] dark:bg-sky-500/10" />
+          <div className="absolute top-[20%] -right-[10%] h-[35%] w-[35%] rounded-full bg-indigo-500/5 blur-[120px] dark:bg-indigo-500/10" />
+          <div className="absolute -bottom-[10%] left-[20%] h-[30%] w-[30%] rounded-full bg-blue-500/5 blur-[120px] dark:bg-blue-500/10" />
+        </div>
+
         <Home />
         <About />
         <Skills />
